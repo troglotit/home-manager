@@ -104,6 +104,7 @@
   programs = {
     home-manager.enable = true;
     neovim.enable = true;
+    helix.enable = true;
     ripgrep.enable = true;
     fd.enable = true;
     bat.enable = true;
