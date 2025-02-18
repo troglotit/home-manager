@@ -5,6 +5,7 @@
   # manage.
   home.username = "aargunov";
   home.homeDirectory = "/home/aargunov";
+
   programs.git = {
         enable = true;
         aliases = {
@@ -28,6 +29,10 @@
 
         lfs.enable = true;
         ignores = [ ".direnv" "result" ];
+  };
+
+  programs.gh = {
+    enable = true;
   };
 
   # This value determines the Home Manager release that your configuration is
@@ -61,6 +66,8 @@
     pkgs.cargo
     pkgs.unzip
     pkgs.volta
+    pkgs.bun
+    pkgs.mergiraf
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
