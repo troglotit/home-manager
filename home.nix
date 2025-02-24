@@ -1,34 +1,36 @@
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
   home.username = "aargunov";
   home.homeDirectory = "/home/aargunov";
 
   programs.git = {
-        enable = true;
-        aliases = {
-            pushall = "!git remote | xargs -L1 git push --all";
-            graph = "log --decorate --oneline --graph";
-            add-nowhitespace = "!git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -";
-        };
-        userName = "aargunov";
-        userEmail = "alexander.argunov@tern.ru";
-        extraConfig = {
-            feature.manyFiles = true;
-            init.defaultBranch = "main";
-            gpg.format = "ssh";
-            merge.conflictStyle = "diff3";
-        };
+    enable = true;
+    aliases = {
+      pushall = "!git remote | xargs -L1 git push --all";
+      graph = "log --decorate --oneline --graph";
+      add-nowhitespace = "!git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -";
+    };
+    userName = "aargunov";
+    userEmail = "alexander.argunov@tern.ru";
+    extraConfig = {
+      feature.manyFiles = true;
+      init.defaultBranch = "main";
+      gpg.format = "ssh";
+      merge.conflictStyle = "diff3";
+    };
 
-        signing = {
-            key = "~/.ssh/id_ed25519";
-            signByDefault = builtins.stringLength "~/.ssh/id_ed25519" > 0;
-        };
+    signing = {
+      key = "~/.ssh/id_ed25519";
+      signByDefault = builtins.stringLength "~/.ssh/id_ed25519" > 0;
+    };
 
-        lfs.enable = true;
-        ignores = [ ".direnv" "result" ];
+    lfs.enable = true;
+    ignores = [".direnv" "result"];
   };
 
   programs.gh = {
@@ -125,7 +127,7 @@
     ];
   };
 
-  home.sessionPath = [ 
+  home.sessionPath = [
     "$HOME/bin"
     "$HOME/.local/bin"
     "$HOME/.volta/bin"
