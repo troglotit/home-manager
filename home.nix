@@ -22,6 +22,7 @@
       init.defaultBranch = "main";
       gpg.format = "ssh";
       merge.conflictStyle = "diff3";
+      pull.rebase = true;
     };
 
     signing = {
@@ -70,6 +71,7 @@
     pkgs.volta
     pkgs.bun
     pkgs.mergiraf
+    pkgs.nixd
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
