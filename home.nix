@@ -23,6 +23,7 @@
       gpg.format = "ssh";
       merge.conflictStyle = "diff3";
       pull.rebase = true;
+      rebase.autoStash = true;
     };
 
     signing = {
