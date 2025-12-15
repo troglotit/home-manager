@@ -69,7 +69,6 @@
     # (pkgs.writeShellScriptBin "my-hello" ''
     #   echo "Hello, ${config.home.username}!"
     # '')
-    pkgs.cargo
     pkgs.unzip
     pkgs.volta
     pkgs.bun
@@ -131,6 +130,10 @@
       "--group-directories-first"
       "--header"
     ];
+    zoxide = {
+      enable = true;
+      enableBashIntegration = true;
+    };
   };
 
   home.sessionPath = [
