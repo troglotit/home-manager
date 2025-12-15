@@ -10,20 +10,22 @@
 
   programs.git = {
     enable = true;
-    aliases = {
-      pushall = "!git remote | xargs -L1 git push --all";
-      graph = "log --decorate --oneline --graph";
-      add-nowhitespace = "!git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -";
-    };
-    userName = "aargunov";
-    userEmail = "alexander.argunov@tern.ru";
-    extraConfig = {
+    settings = {
+      aliases = {
+        pushall = "!git remote | xargs -L1 git push --all";
+        graph = "log --decorate --oneline --graph";
+        add-nowhitespace = "!git diff -U0 -w --no-color | git apply --cached --ignore-whitespace --unidiff-zero -";
+      };
       feature.manyFiles = true;
       init.defaultBranch = "main";
       gpg.format = "ssh";
       merge.conflictStyle = "diff3";
       pull.rebase = true;
       rebase.autoStash = true;
+      user = {
+        name = "aargunov";
+        email = "alexander.argunov@tern.ru";
+      };
     };
 
     signing = {
@@ -73,6 +75,7 @@
     pkgs.bun
     pkgs.mergiraf
     pkgs.nixd
+    pkgs.nushell
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
