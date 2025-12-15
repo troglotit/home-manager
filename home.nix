@@ -142,6 +142,7 @@
     "$HOME/.volta/bin"
     "$HOME/.bun/bin"
     "$HOME/.config/emacs/bin"
+    # install rustup manually
     "$HOME/.cargo/bin"
   ];
 }
