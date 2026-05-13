@@ -19,6 +19,7 @@
       feature.manyFiles = true;
       init.defaultBranch = "main";
       gpg.format = "ssh";
+      gpg.ssh.allowedSignersFile = "~/.ssh/allowed_signers";
       merge.conflictStyle = "diff3";
       pull.rebase = true;
       rebase.autoStash = true;
@@ -48,7 +49,7 @@
   # You should not change this value, even if you update Home Manager. If you do
   # want to update the value, then make sure to first check the Home Manager
   # release notes.
-  home.stateVersion = "24.05"; # Please read the comment before changing.
+  home.stateVersion = "26.05"; # Please read the comment before changing.
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
