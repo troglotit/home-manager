@@ -119,6 +119,7 @@
   programs = {
     home-manager.enable = true;
     neovim.enable = true;
+    neovim.sideloadInitLua = true;
     helix.enable = true;
     ripgrep.enable = true;
     fd.enable = true;
