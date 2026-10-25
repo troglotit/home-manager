@@ -1,12 +1,10 @@
+{ config, pkgs, ... }:
+
 {
-  config,
-  pkgs,
-  ...
-}: {
   # Home Manager needs a bit of information about you and the paths it should
   # manage.
-  home.username = "aargunov";
-  home.homeDirectory = "/home/aargunov";
+  home.username = "sajko";
+  home.homeDirectory = "/home/sajko";
 
   programs.git = {
     enable = true;
@@ -24,8 +22,8 @@
       pull.rebase = true;
       rebase.autoStash = true;
       user = {
-        name = "aargunov";
-        email = "alexander.argunov@tern.ru";
+        name = "alex";
+        email = "sajkoooo@gmail.com";
       };
     };
 
@@ -111,6 +109,7 @@
   #
   home.sessionVariables = {
     EDITOR = "nvim";
+    BROWSER = "wslopen";
   };
 
   programs.bash.enableCompletion = true;
